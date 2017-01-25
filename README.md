@@ -11,11 +11,10 @@ npm install --save botkit-storage-beepboop
 
 ## Usage
 
-This module expects the following environment variables to be set.  They're set automatically when running on Beep Boop, but when running locally you need to make sure you set them appropriately.
+This module expects the following environment variable to be set for authentication.  It's set automatically when running on Beep Boop, but when running locally you need to make sure you set it appropriately.
 
 ```bash
 BEEPBOOP_TOKEN="API_TOKEN_FROM_BEEPBOOP_PROJECT"
-BEEPBOOP_PERSIST_URL="https://beepboophq.com/api/v1"
 ```
 
 ```js
@@ -26,5 +25,10 @@ var controller = Botkit.slackbot({
 })
 ```
 
+## BotkitStorageBeepBoop([options])
+Returns a Beep Boop Perist api:
+
++ `options.token` - defaults to `process.env.BEEPBOOP_TOKEN` - auth token passed into environment by Beep Boop
++ `options.url` - defaults to `process.env.BEEPBOOP_API_URL || 'https://beepboophq.com/api/v1` - api url passed into environment by Beep Boop
 
 [beepboop]: https://beepboophq.com

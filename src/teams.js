@@ -1,10 +1,15 @@
 // BeepBoop Teams API wrapper
 // TODO: Pull this into it's own module, beepboop-teams or a generic beepboop-api
+const deap = require('deap')
 const Wreck = require('wreck')
 const url = require('url')
 
 module.exports = function serviceProvider (config) {
-  if (!config) throw new Error('Must set config for teams api')
+  config = deap({
+    token: process.env.BEEPBOOP_TOKEN,
+    url: process.env.BEEPBOOP_API_URL || 'https://beepboophq.com/api/v1'
+  }, config || {})
+
   if (!config.token) throw new Error('Must set token for teams api')
   if (!config.url) throw new Error('Must set url for teams api')
 

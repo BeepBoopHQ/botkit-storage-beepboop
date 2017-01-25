@@ -3,10 +3,7 @@ const Persist = require('beepboop-persist')
 const Teams = require('./teams')
 
 module.exports = function (config) {
-  config = deap({
-    token: process.env.BEEPBOOP_TOKEN,
-    url: process.env.BEEPBOOP_PERSIST_URL
-  }, config || {})
+  config = config || {}
 
   var persist = Persist(config)
   var bbTeams = Teams(config)
