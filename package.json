@@ -1,6 +1,6 @@
 {
   "name": "botkit-storage-beepboop",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Storage module for Botkit when running on Beep Boop",
   "main": "index.js",
   "scripts": {
